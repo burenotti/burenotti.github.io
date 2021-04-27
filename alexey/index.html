@@ -1,0 +1,47 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="avatar" ></div>
+                <div class="name">Алексей</div>
+                <div class="nickname">Чертила ебаный</div>
+            </div>
+        </div>
+    </body>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .content{
+            background: #e8e8e8;
+        }
+        .avatar {
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-position: top left;
+            background-repeat: no-repeat;
+            background-image: url("static.jpg");
+        }
+        .avatar:hover{
+            background-image: url("hover.png");
+        }
+        .name, .nickname{
+            text-align: center;
+            font-size: 1.2em;
+            font-family: Lato;
+        }
+        .avatar:hover + .name {
+            display: none;
+        }
+        .nickname {
+            display: none;
+        }
+        .avatar:hover ~ .nickname {
+            display: block;
+        }
+    </style>
+</html>
