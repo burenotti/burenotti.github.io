@@ -88,7 +88,7 @@ h2 {
 .slide {
     position: relative;
     width: 100vw;
-    min-height: 100vh;
+    min-height: 800px;
     display: grid;
     padding: 10px 20px;
 }
@@ -146,7 +146,7 @@ h2 {
 }
 
 #second-slide .slide-background-image {
-    bottom: 50px;
+    bottom: 0px;
     right: -50px;
 }
 
@@ -165,7 +165,7 @@ h1, h2 {
     position: absolute;
     width: 50px;
     height: 50px;
-    bottom: 85px;
+    bottom: 150px;
     border-radius: 50%;
     left: calc(50% - 25px);
     cursor: pointer;
@@ -184,7 +184,7 @@ h1, h2 {
     border-color: var(--fg-accent-color);
 }
 
-.go-next-button .check {
+.check {
     display: block;
     width: 15px;
     height: 15px;
@@ -262,6 +262,134 @@ h1, h2 {
     width: -moz-fit-content;
     width: fit-content;
     justify-self: center;
+}
+
+#fourth-slide {
+    background-size: cover !important;
+    background: url(63fe619665ffb41e6c90.jpg) no-repeat;
+    filter: saturate(150%);
+}
+
+#fourth-slide .slide-background-image {
+    right: 50px;
+    top: 120px;
+}
+
+#fifth-slide .slide-content {
+    display: grid;
+    padding: 0 20px;
+}
+
+#fifth-slide .slider-item {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+}
+
+#fifth-slide .slider-item .text {
+    padding: 30px;
+    font-size: 1.2em;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider-item {
+    opacity: 0;
+    position: absolute;
+    transform: translate(-200px);
+    transition: opacity 500ms, transform 1000ms;
+}
+
+.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+#fifth-slide {
+    align-content: start;
+}
+
+#fifth-slide .card {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    justify-self: center;
+}
+
+.slider-controls {
+    margin-top: 15px;
+}
+.slider-control {
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.slider-control .check {
+    -webkit-animation: none;
+            animation: none;
+    /*margin: 0;*/
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    transition: border-width 50ms;
+}
+
+.slider-control:hover .check {
+    border-width: 4px;
+}
+.slider-control.backward .check {
+    transform: rotate(135deg);
+}
+
+.slider-control.forward .check {
+    transform: rotate(-45deg);
+}
+
+.rotating {
+    -webkit-animation-name: rotating;
+            animation-name: rotating;
+    -webkit-animation-duration: 6000ms;
+            animation-duration: 6000ms;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-delay: 500ms;
+            animation-delay: 500ms;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @-webkit-keyframes bouncing {
